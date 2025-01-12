@@ -1,0 +1,28 @@
+.footer{
+    background-color: #202020;
+    color: white;
+}
+.footer-top{
+    padding: 80px 20px 30px 20px;
+}
+.footer-form{
+    text-align: center;
+}
+.each-logo{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.logo-each{
+    font-size: 1.3rem;
+    color: white;
+}
+.each-logo:hover{
+    transform: scale(1.3);
+}
+#foot-bold{
+    font-family: "Poppins", sans-serif;
+}

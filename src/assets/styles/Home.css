@@ -1,0 +1,112 @@
+.caro-img{
+    background-image: url("../images/caro1.png");
+    height: 100vh;
+    background-position: center 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+@media(max-width:900px){
+    .caro-img{
+        background-position: center 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .dumy{
+        display: none;
+    }
+}
+@media(max-width:871px){
+    .caro-img{
+        background-position: 0 0;
+    }
+}
+@media(max-width:600px){
+    .caro-img{
+        background-position: -80px 0;
+    }
+}
+@media(max-width:420px){
+    .caro-img{
+        background-position: -120px 0;
+    }
+}
+.dumy{
+    width: 60%;
+}
+.caro-content{
+    color: white;
+    width: 350px;
+    /* margin-top: -40px; */
+}
+@font-face {
+    font-family: astro-earth-bold;
+    font-weight: bold;
+    src: url(../fonts/ArsenicaTrial-Medium.ttf);
+  }
+.caro-h{
+    font-family: astro-earth-bold;
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+}
+@media(max-width:425px){
+    .caro-h{
+        font-size: 3.2rem;
+    }
+}
+@media(max-width:361px){
+    .caro-h{
+        font-size: 2.7rem;
+    }
+}
+.caro-p{
+    font-size: 0.9rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.font-h{
+    font-family: astro-earth;
+}
+.font-m{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.9rem;
+}
+.profiles{
+    margin: 50px 5% 0 5%;
+    padding-bottom: 50px;
+}
+.model-img{
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
+}
+.row{
+    --bs-gutter-x: 0.3rem;
+}
+@media(max-width:720px){
+    .model-img{
+        height: 300px;
+        width: 250px;
+    }
+}
+@media(max-width:595px){
+    .model-img{
+        height: 250px;
+        width: 200px;
+    }
+}
+@media(max-width:480px){
+    .profiles{
+        margin: 50px 3px 0 3px;
+        padding-bottom: 50px;
+    }
+    .model-img{
+        height: 250px;
+        width: 100%;
+    }
+}
+.models-list{
+    margin: 30px 0;
+}

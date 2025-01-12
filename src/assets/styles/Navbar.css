@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@font-face {
+  font-family: astro-earth;
+  font-weight: bold;
+  src: url(../fonts/ArsenicaTrial-Regular.ttf);
+}
+.navbar-box {
+  background-color: rgba(0, 0, 0, 0.725);
+  padding: 8px 0;
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+@media(max-width:992px){
+  .navbar-box{
+    text-align: center;
+  }
+}
+.nav-link {
+  font-family: astro-earth;
+  color: white;
+}
+.nav-link:hover {
+  font-family: astro-earth;
+  color: white;
+}
+.nav-item{
+    padding: 0 20px;
+}
+.book-now {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border: none;
+  outline: none;
+  background-color: white;
+  padding: 7px 35px;
+  font-size: 0.85rem;
+  border-radius: 7px;
+  color: black;
+  font-weight: 500;
+}
