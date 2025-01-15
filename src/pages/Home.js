@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../assets/styles/Home.css";
 import arrow from "../assets/images/arrow.png";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Elizabeth from "../assets/images/models/Elizabeth/Elizabeth1.png";
 import Elizabeth2 from "../assets/images/models/Elizabeth/Elizabeth2.png";
 import Elizabeth3 from "../assets/images/models/Elizabeth/Elizabeth3.png";
@@ -336,6 +336,7 @@ import tg from "../assets/images/tg.png";
 
 const Home = () => {
   const nav = useNavigate();
+  const { pathname } = useLocation();
   const models = [
     {
       img: Elizabeth,
@@ -1470,7 +1471,15 @@ const Home = () => {
     },
   ];
   const [postPerPage, setPostPerPage] = useState(12);
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(() => {
+    return parseInt(localStorage.getItem('currentPage'), 10) || 1;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('currentPage', currentPage);
+  }, [currentPage]);
+  
   const indexOfLastPost = postPerPage * currentPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPosts = models
@@ -1494,6 +1503,7 @@ const Home = () => {
   const handleScrollToProfiles = () => {
     profilesRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  
   return (
     <div style={{ background: "black", color: "white" }}>
       <div className="tgwp-1" style={{ background: "white" }}>
@@ -1559,7 +1569,7 @@ const Home = () => {
               key={i}
               style={{ cursor: "pointer" }}
               onClick={() =>
-                nav("/profile", {
+                {localStorage.setItem("page", currentPage); nav("/profile", {
                   state: {
                     name: e.name,
                     age: e.age,
@@ -1581,7 +1591,7 @@ const Home = () => {
                     cuisine: e.cuisine,
                     perfume: e.perfume,
                   },
-                })
+                })}
               }
             >
               <img className="model-img" src={e.img} alt="" />
